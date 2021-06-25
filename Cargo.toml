@@ -13,6 +13,8 @@ gui_web = { path = "../pi_show_wasm_bindgen/gui_web" }
 # res_mgr_web = { git = "https://github.com/GaiaWorld/pi_show.git", branch="wasm-bindgen" }
 res_mgr_web = { path = "../pi_show_wasm_bindgen/res_mgr_web"}
 # astc_decoder_wasmbindgen = { git = "http://ser.yinengyun.com:10080/tech/astc_decoder.git", branch="master" }
+# astar_wasm = { git = "http://ser.yinengyun.com:10082/tech/astar_wasm.git", branch="master" }
+astar_wasm = { path = "../astar_wasm" }
 
 
 [profile.release]
