@@ -31,7 +31,22 @@ fs.readFile(in_wasm_js_path, {encoding:"utf8"}, (err, data) => {
 		data = data.replace(/getObject\(arg0\)\sinstanceof\sHTMLCanvasElement/g, "true");
 
 		data = data.replace(/=== 0 \? undefined/g, "=== 0 ? null");
-		
+
+		// wasm崩溃时，通知，以便外部做进一步处理。（因为目前浏览器对wasm的支持不稳定，在某些版本的chrome内核，会出现不同程度的bug，通知出去，使得外部可以采用一些备用方案，如：总是为其下载固定版本的chrome内核）
+		data = data.replace(
+`
+    imports.wbg.__wbindgen_throw = function(arg0, arg1) {
+        throw new Error(getStringFromWasm0(arg0, arg1));
+    };
+`,
+`
+    imports.wbg.__wbindgen_throw = function(arg0, arg1) {
+		let str = getStringFromWasm0(arg0, arg1);
+		window._$pi?._wasmThrow?.(str);
+        throw new Error(str);
+    };
+`
+		)
 
 		data = data.replace(
 `    const { instance, module } = await load(await input, imports);

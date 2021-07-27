@@ -16,6 +16,12 @@ res_mgr_web = { path = "../pi_show/res_mgr_web"}
 # astar_wasm = { git = "http://ser.yinengyun.com:10082/tech/astar_wasm.git", branch="master" }
 astar_wasm = { path = "../astar_wasm" }
 
+wasm-bindgen = { version = "*", features = ["serde-serialize"] }
+
+# 测试log
+log = "0.4.14"
+web_logger = { path = "../web_logger"}
+
 
 [profile.release]
 debug= true
