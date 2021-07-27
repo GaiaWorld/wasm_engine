@@ -11,7 +11,7 @@ use wasm_bindgen::prelude::*;
 
 #[allow(unused_attributes)]
 #[wasm_bindgen]
-pub fn init_logger(level: web_logger::Level) {
-    web_logger::init_with_level(level);
+pub fn init_logger(level: pi_web_logger::Level) {
+    pi_web_logger::init_with_level(level);
 	info!("init_logger ok!");
 }

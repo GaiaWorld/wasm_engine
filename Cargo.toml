@@ -18,9 +18,10 @@ astar_wasm = { path = "../astar_wasm" }
 
 wasm-bindgen = { version = "*", features = ["serde-serialize"] }
 
-# 测试log
+# log
 log = "0.4.14"
-web_logger = { path = "../web_logger"}
+# pi_web_logger = { git = "http://ser.yinengyun.com:10082/tech/pi_web_logger.git", branch="master" }
+pi_web_logger = { path = "../pi_web_logger"}
 
 
 [profile.release]
