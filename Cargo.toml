@@ -16,6 +16,9 @@ res_mgr_web = { path = "../pi_show/res_mgr_web"}
 # astar_wasm = { git = "http://ser.yinengyun.com:10082/tech/astar_wasm.git", branch="master" }
 astar_wasm = { path = "../astar_wasm" }
 
+# quad_tree_wasm = { git = "http://ser.yinengyun.com:10082/tech/quad_tree_wasm.git", branch="master" }
+quad_tree_wasm = { path = "../quad_tree_wasm" }
+
 wasm-bindgen = { version = "*", features = ["serde-serialize"] }
 
 # log
