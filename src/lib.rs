@@ -4,6 +4,8 @@ extern crate res_mgr_web;
 
 pub use gui_web::*;
 pub use res_mgr_web::*;
+pub use astar_wasm::*;
+pub use quad_tree_wasm::*;
 use log::info;
 // pub use astc_decoder_wasmbindgen::*;
 
