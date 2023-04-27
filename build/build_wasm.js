@@ -51,18 +51,15 @@ fs.readFile(in_wasm_js_path, {encoding:"utf8"}, (err, data) => {
 		data = data.replace(
 `    const { instance, module } = await load(await input, imports);
 
-    wasm = instance.exports;
-    init.__wbindgen_wasm_module = module;
-
-    return wasm;
+    return finalizeInit(instance, module);
 }
 
+export { initSync }
 export default init;`,  
 
 	`    const r = await load(await input, imports);
 
-    wasm = r.instance.exports;
-    init.__wbindgen_wasm_module = r.module;
+    finalizeInit(r.instance, r.module);
 	if(module.postRun) {
 		module.postRun();
 	}
@@ -70,8 +67,11 @@ export default init;`,
     return wasm;
 }
 
+export { initSync }
 Promise.resolve().then(() => {
-	init(module.wasmModule);
+	init(module.wasmModule).then((r) => {
+		window["_$wasm"] = r;
+	});
 })`);
 		// data = data.replace(`Module["noExitRuntime"]=true;run();`, `Module["noExitRuntime"] = true;
 		// //PI_START

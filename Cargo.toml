@@ -25,6 +25,7 @@ wasm-bindgen = { version = "*", features = ["serde-serialize"] }
 log = "0.4.14"
 # pi_web_logger = { git = "http://ser.yinengyun.com:10082/tech/pi_web_logger.git", branch="master" }
 pi_web_logger = { path = "../pi_web_logger"}
+# wee_alloc="0.4"
 
 
 [profile.release]
@@ -33,6 +34,10 @@ lto = true #这为LLVM提供了更多内联和修剪功能的机会。它不仅�
 #opt-level = 's'  # 默认情况下，对LLVM的优化通道进行了调整，以提高速度，而不是大小。我们可以通过修改以下
 # opt-level = "z" # 了更积极地优化尺寸，以进一步的潜在速度成本
 # 请注意，令人惊讶的是，opt-level = "s"有时二进制文件的大小可能小于opt-level = "z"。总是测量！
-opt-level = "z" # 性能优先
+opt-level = "z"
 # panic = 'abort'
 codegen-units = 1
+dwarf-debug-info = true
+
+[profile.dev]
+dwarf-debug-info = true

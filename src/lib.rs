@@ -2,6 +2,12 @@ extern crate gui_web;
 extern crate res_mgr_web;
 // extern crate astc_decoder_wasmbindgen;
 
+// extern crate wee_alloc;
+
+// Use `wee_alloc` as the global allocator.
+// #[global_allocator]
+// static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
+
 pub use gui_web::*;
 pub use res_mgr_web::*;
 pub use astar_wasm::*;
