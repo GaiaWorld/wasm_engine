@@ -1,5 +1,5 @@
-extern crate gui_web;
-extern crate res_mgr_web;
+// extern crate gui_web;
+// extern crate res_mgr_web;
 // extern crate astc_decoder_wasmbindgen;
 
 // extern crate wee_alloc;
@@ -10,10 +10,10 @@ extern crate res_mgr_web;
 
 pub use gui_web::*;
 pub use res_mgr_web::*;
-pub use astar_wasm::*;
-pub use quad_tree_wasm::*;
+pub use pi_spatial::*;
+pub use pi_path_finding::*;
+pub use pi_orca::*;
 use log::info;
-// pub use astc_decoder_wasmbindgen::*;
 
 use wasm_bindgen::prelude::*;
 
