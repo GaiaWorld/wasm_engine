@@ -26,7 +26,7 @@ pi_web_logger = { path = "../pi_web_logger"}
 pi_path_finding = "0.3"
 
 # 避障算法相关
-pi_orca = "0.2"
+pi_orca = "0.3"
 
 # 四叉树和tilemap相关
 pi_spatial = "0.4"
