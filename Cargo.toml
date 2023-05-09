@@ -23,7 +23,7 @@ res_mgr_web = { path = "../pi_show/res_mgr_web"}
 pi_web_logger = { path = "../pi_web_logger"}
 
 # a星相关模块
-pi_path_finding = "0.3"
+pi_path_finding = "0.4"
 
 # 避障算法相关
 pi_orca = "0.3"

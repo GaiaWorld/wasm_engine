@@ -8,8 +8,8 @@
 // #[global_allocator]
 // static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
-// pub use gui_web::*;
-// pub use res_mgr_web::*;
+pub use gui_web::*;
+pub use res_mgr_web::*;
 pub use pi_spatial::*;
 pub use pi_path_finding::*;
 pub use pi_orca::*;

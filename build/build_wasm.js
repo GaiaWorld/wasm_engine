@@ -68,11 +68,15 @@ export default init;`,
 }
 
 export { initSync }
-Promise.resolve().then(() => {
-	init(module.wasmModule).then((r) => {
-		window["_$wasm"] = r;
-	});
-})`);
+// 前后端适配
+if(!globalThis._$cwd){
+	Promise.resolve().then(() => {
+		init(module.wasmModule).then((r) => {
+			window["_$wasm"] = r;
+		});
+	})
+}
+`);
 		// data = data.replace(`Module["noExitRuntime"]=true;run();`, `Module["noExitRuntime"] = true;
 		// //PI_START
 		// run();
