@@ -8,7 +8,7 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dependencies]
-wasm-bindgen = { version = "*", features = ["serde-serialize"] }
+wasm-bindgen = { version = "0.2.86", features = ["serde-serialize"] }
 log = "0.4.14"
 
 # astc_decoder_wasmbindgen = { git = "http://ser.yinengyun.com:10080/tech/astc_decoder.git", branch="master" }
@@ -23,10 +23,10 @@ res_mgr_web = { path = "../pi_show/res_mgr_web"}
 pi_web_logger = { path = "../pi_web_logger"}
 
 # a星相关模块
-pi_path_finding = "0.4"
+pi_path_finding = "0.6"
 
 # 避障算法相关
-pi_orca = "0.3"
+pi_orca = "0.4"
 
 # 四叉树和tilemap相关
 pi_spatial = "0.4"
