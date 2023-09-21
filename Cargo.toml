@@ -27,9 +27,11 @@ pi_path_finding = "0.6"
 
 # 避障算法相关
 pi_orca = "0.4"
+# pi_orca = {path = "../pi_orca"}
 
 # 四叉树和tilemap相关
-pi_spatial = "0.4"
+pi_spatial = "0.5"
+# pi_spatial = {path = "../pi_spatial"}
 
 
 [profile.release]
