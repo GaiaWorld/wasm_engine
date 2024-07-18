@@ -47,6 +47,8 @@ fs.readFile(in_wasm_js_path, {encoding:"utf8"}, (err, data) => {
     };
 `
 		)
+	
+
 
 		data = data.replace(
 `    const { instance, module } = await __wbg_load(await input, imports);
@@ -55,16 +57,17 @@ fs.readFile(in_wasm_js_path, {encoding:"utf8"}, (err, data) => {
 }
 
 export { initSync }
-export default __wbg_init;`,  
+export default __wbg_init;`
 
-	`    const r = await __wbg_load(await input, imports);
+,`    const r = await __wbg_load(await input, imports);
 
-    __wbg_finalize_init(r.instance, r.module);
+    let ret = __wbg_finalize_init(r.instance, r.module);
+	
 	if(module.postRun) {
 		module.postRun();
 	}
 
-    return wasm;
+    return ret;
 }
 
 export { initSync }
@@ -75,8 +78,7 @@ if(!globalThis._$cwd){
 			window["_$wasm"] = r;
 		});
 	})
-}
-`);
+}`);
 		// data = data.replace(`Module["noExitRuntime"]=true;run();`, `Module["noExitRuntime"] = true;
 		// //PI_START
 		// run();

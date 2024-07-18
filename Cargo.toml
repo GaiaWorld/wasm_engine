@@ -8,8 +8,9 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dependencies]
-wasm-bindgen = { version = "0.2.86", features = ["serde-serialize"] }
-log = "0.4.14"
+wasm-bindgen = { version = "0.2", features = ["serde-serialize"] }
+log = {version="0.4.14", features = ["release_max_level_info"]}
+getrandom = "=0.2.8" 
 
 # astc_decoder_wasmbindgen = { git = "http://ser.yinengyun.com:10080/tech/astc_decoder.git", branch="master" }
 
@@ -31,8 +32,19 @@ pi_orca = "0.4"
 
 # 四叉树和tilemap相关
 pi_spatial = "0.5"
+wee_alloc = "0.4"
 # pi_spatial = {path = "../pi_spatial"}
+# talc = {version = "4.2", default-features = false, features = ["lock_api", "allocator"]}
+lol_alloc = {path = "../lol_alloc"}
+ahash = "0.8.6"
+pi_style = {version = "0.1.11", registry = "yn"}
+pi_null = "=0.1.0"
+# pi_share = "0.4"
+pi_share = {version = "0.4", features = ["no_atomic"]}
+pi_atom = {version = "0.5", features = ["pointer_width_32"]}
 
+# [patch.crates-io]
+# talc = {path="../talc"}
 
 [profile.release]
 debug= true
@@ -46,3 +58,11 @@ dwarf-debug-info = true
 
 [profile.dev]
 dwarf-debug-info = true
+
+[patch.crates-io]
+pi_atom = {path = "D://0_rust/pi_atom"}
+pi_share = {path = "../pi_share"}
+pi_assets = {path = "../pi_assets"}
+
+[patch.yn]
+pi_style = {path = "D://0_rust/pi_style"}
