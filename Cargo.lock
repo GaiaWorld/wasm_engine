@@ -470,6 +470,7 @@ dependencies = [
  "map",
  "paste 0.1.18",
  "pi_atom",
+ "pi_flex_layout",
  "pi_share",
  "pointer",
  "slab 0.1.0",
@@ -529,6 +530,8 @@ name = "flex_layout"
 version = "0.2.2"
 dependencies = [
  "dirty",
+ "ecs",
+ "ecs_derive",
  "heap",
  "idtree",
  "libm 0.1.4",
@@ -536,6 +539,7 @@ dependencies = [
  "map",
  "paste 0.1.18",
  "pi_flex_layout",
+ "pi_print_any",
  "serde",
  "slab 0.1.0",
 ]
@@ -1679,8 +1683,6 @@ checksum = "89637d469b31a19c017b0f25fe8af7412d821390315e65105a5530edf4952932"
 [[package]]
 name = "pi_flex_layout"
 version = "0.2.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bca76b82cf701451d4090746e4ce450b2b10a5e20d96563b6bb702deb032aa1e"
 dependencies = [
  "log",
  "paste 1.0.5",

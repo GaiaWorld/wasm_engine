@@ -35,7 +35,7 @@ use wasm_bindgen::prelude::*;
 
 // use lol_alloc::{FreeListAllocator, LockedAllocator};
 // #[global_allocator]
-// static ALLOCATOR: LockedAllocator<FreeListAllocator> = LockedAllocator::new(FreeListAllocator::new(33554432));
+// static ALLOCATOR: LockedAllocator<FreeListAllocator> = LockedAllocator::new(FreeListAllocator::new(67108864));
 
 #[allow(unused_attributes)]
 #[wasm_bindgen]
