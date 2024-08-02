@@ -1170,8 +1170,9 @@ checksum = "8eeeddb49aca084a517b5efcd8111cd19121130201190c09d5d817e998f78a4a"
 [[package]]
 name = "pi_share"
 version = "0.4.15"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "027dc7311d53015579db8a219651288ffff3212961e6328e6127ab34b9f63429"
+dependencies = [
+ "log",
+]
 
 [[package]]
 name = "pi_slotmap"
@@ -1868,3 +1869,19 @@ checksum = "05f360fc0b24296329c78fda852a1e9ae82de9cf7b27dae4b7f62f118f77b9ed"
 dependencies = [
  "tap",
 ]
+
+[[patch.unused]]
+name = "pi_assets"
+version = "0.14.2"
+
+[[patch.unused]]
+name = "pi_atom"
+version = "0.5.3"
+
+[[patch.unused]]
+name = "pi_flex_layout"
+version = "0.2.11"
+
+[[patch.unused]]
+name = "pi_style"
+version = "0.1.12"
