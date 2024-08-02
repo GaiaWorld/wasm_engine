@@ -1888,7 +1888,7 @@ dependencies = [
 
 [[package]]
 name = "pi_style"
-version = "0.1.11"
+version = "0.1.12"
 dependencies = [
  "bitvec",
  "cssparser",
