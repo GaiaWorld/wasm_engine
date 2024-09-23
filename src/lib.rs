@@ -8,6 +8,10 @@
 // #[global_allocator]
 // static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
+// use lol_alloc::{FreeListAllocator, LockedAllocator};
+// #[global_allocator]
+// static ALLOCATOR: LockedAllocator<FreeListAllocator> = LockedAllocator::new(FreeListAllocator::new(67108864));
+
 pub use gui_web::*;
 pub use res_mgr_web::*;
 pub use pi_spatial::*;

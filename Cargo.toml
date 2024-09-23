@@ -33,7 +33,8 @@ pi_orca = "0.4"
 pi_spatial = "0.5"
 # pi_spatial = {path = "../pi_spatial"}
 
-pi_bon_decode = {path = "../pi_bon_decode"}
+# lol_alloc = {path = "../lol_alloc"}
+pi_bon_decode = {version = "0.1", registry = "yn"}
 
 [profile.release]
 debug= true
@@ -46,9 +47,6 @@ codegen-units = 1
 dwarf-debug-info = true
 
 [profile.dev]
-dwarf-debug-info = true
 
 [patch.crates-io]
 pi_share = {path = "../pi_share"}
-pi_assets = {path = "../pi_assets"}
-pi_bon = {path = "../pi_bon"}
