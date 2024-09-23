@@ -1,3 +1,4 @@
+call cfg.bat
 cd ../
 set RUST_LOG=info
 wasm-pack build --profiling  --target web --out-dir pkg_profiling --out-name wasm_engine

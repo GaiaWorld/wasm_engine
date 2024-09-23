@@ -16,6 +16,16 @@ var dir = process.argv[2] || "pkg";
 var name = process.argv[3] || "gui";
 var wasmName = `${name}_bg`;
 
+let outDir;
+let data = fs.readFileSync("temp/cfg.txt", {encoding:"utf8"});
+let datas = data.split("=");
+if (datas.length == 2) {
+	let d = datas[1].trim();
+	if (d !== "") {
+		outDir = d;
+	}
+	
+}
 
 let in_wasm_path = `${dir}/${wasmName}.wasm`;
 let in_wasm_js_path = `${dir}/${name}.js`;
@@ -92,10 +102,19 @@ if(!globalThis._$cwd){
 				console.log("写文件失败！！", JSON.stringify(err));
 			}
 		});
+		
+		if (outDir) {
+			fs.writeFile(`${outDir}/${name}.wasm.ts`, data, (err) => {
+				if(err) {
+					console.log("写文件失败！！", JSON.stringify(err));
+				}
+			})
+		}
 	} else {
 		console.log("读文件失败！！", JSON.stringify(err));
 	}
 });
+
 
 fs.readFile(in_wasm_path, (err, data) => {
 	if(!err) {
@@ -104,6 +123,15 @@ fs.readFile(in_wasm_path, (err, data) => {
 				console.log("写文件失败！！", JSON.stringify(err));
 			}
 		})
+
+		console.log("wasm拷贝到:", outDir);
+		if (outDir) {
+			fs.writeFile(`${outDir}/${name}.wasm`, data, (err) => {
+				if(err) {
+					console.log("写文件失败！！", JSON.stringify(err));
+				}
+			})
+		}
 	} else {
 		console.log("读文件失败！！", JSON.stringify(err));
 	}
