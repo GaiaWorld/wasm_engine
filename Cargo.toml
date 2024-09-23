@@ -33,6 +33,7 @@ pi_orca = "0.4"
 pi_spatial = "0.5"
 # pi_spatial = {path = "../pi_spatial"}
 
+pi_bon_decode = {path = "../pi_bon_decode"}
 
 [profile.release]
 debug= true
@@ -46,3 +47,8 @@ dwarf-debug-info = true
 
 [profile.dev]
 dwarf-debug-info = true
+
+[patch.crates-io]
+pi_share = {path = "../pi_share"}
+pi_assets = {path = "../pi_assets"}
+pi_bon = {path = "../pi_bon"}

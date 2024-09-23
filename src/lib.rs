@@ -14,6 +14,7 @@ pub use pi_spatial::*;
 pub use pi_path_finding::*;
 pub use pi_orca::*;
 use log::info;
+pub use pi_bon_decode::*;
 
 use wasm_bindgen::prelude::*;
 
