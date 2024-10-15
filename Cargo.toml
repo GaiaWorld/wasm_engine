@@ -33,7 +33,7 @@ pi_orca = "0.4"
 pi_spatial = "0.5"
 # pi_spatial = {path = "../pi_spatial"}
 
-# lol_alloc = {path = "../lol_alloc"}
+lol_alloc = {path = "../lol_alloc"}
 pi_bon_decode = {version = "0.1", registry = "yn"}
 
 [profile.release]
