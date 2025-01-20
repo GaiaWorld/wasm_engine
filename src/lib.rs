@@ -15,7 +15,7 @@ pub use pi_spatial::*;
 pub use pi_path_finding::*;
 pub use pi_orca::*;
 use log::info;
-
+pub use pi_bon_decode::*;
 use wasm_bindgen::prelude::*;
 
 // extern crate wee_alloc;
@@ -36,6 +36,13 @@ use wasm_bindgen::prelude::*;
 // use lol_alloc::{FreeListAllocator, LockedAllocator};
 // #[global_allocator]
 // static ALLOCATOR: LockedAllocator<FreeListAllocator> = LockedAllocator::new(FreeListAllocator::new(67108864));
+
+#[global_allocator]
+static ALLOCATOR: talc::Talck<talc::locking::AssumeUnlockable, talc::ClaimOnOom> = unsafe {
+    static mut MEMORY: [u8; 64 * 1024 * 1024] = [0; 64 * 1024 * 1024];
+    let span = talc::Span::from_const_array(std::ptr::addr_of!(MEMORY));
+    talc::Talc::new(talc::ClaimOnOom::new(span)).lock()
+};
 
 #[allow(unused_attributes)]
 #[wasm_bindgen]

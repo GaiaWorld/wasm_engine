@@ -30,18 +30,20 @@ pi_path_finding = "0.6"
 pi_orca = "0.4"
 # pi_orca = {path = "../pi_orca"}
 
+pi_bon_decode = {version = "0.1", registry = "yn"}
 # 四叉树和tilemap相关
 pi_spatial = "0.5"
 wee_alloc = "0.4"
 # pi_spatial = {path = "../pi_spatial"}
 # talc = {version = "4.2", default-features = false, features = ["lock_api", "allocator"]}
-lol_alloc = {path = "../lol_alloc"}
+talc = "=4.4.0"
+# lol_alloc = {path = "../lol_alloc"}
 ahash = "0.8.6"
 pi_style = {version = "0.1.11", registry = "yn"}
 pi_null = "=0.1.0"
 # pi_share = "0.4"
 pi_share = {version = "0.4", features = ["no_atomic"]}
-pi_atom = {version = "0.5", features = ["pointer_width_32"]}
+pi_atom = {version = "0.5"}
 
 # [patch.crates-io]
 # talc = {path="../talc"}
