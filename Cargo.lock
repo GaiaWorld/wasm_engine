@@ -1563,9 +1563,9 @@ dependencies = [
 
 [[package]]
 name = "pi_bon_decode"
-version = "0.1.2"
+version = "0.1.10"
 source = "registry+http://ser.yinengyun.com:10082/tech/crates-io.git"
-checksum = "e80f1d4fe94ca6f32248a998a8bdd9791eafc666889f6cb10e41506e8decbd07"
+checksum = "49892d21ede513f4adbc7b837b5aedf66c98c4537f4e997a90147aa3b6ee32e2"
 dependencies = [
  "brotli-decompressor",
  "bytes",
@@ -1575,6 +1575,7 @@ dependencies = [
  "log",
  "pi_assets",
  "pi_bon",
+ "pi_hash",
  "pi_share",
  "pi_time",
  "serde",
@@ -2444,6 +2445,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "talc"
+version = "4.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "99fd7baf7741cf3749967c73529ec946c09adcfb44a5256fa92f37623fcbda9f"
+dependencies = [
+ "lock_api",
+]
+
+[[package]]
 name = "tap"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2694,6 +2704,7 @@ dependencies = [
  "pi_spatial",
  "pi_web_logger",
  "res_mgr_web",
+ "talc",
  "wasm-bindgen",
 ]
 

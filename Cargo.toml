@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 [dependencies]
 wasm-bindgen = { version = "0.2.86", features = ["serde-serialize"] }
 log = "0.4.14"
-
+talc = "=4.4.0"
 # astc_decoder_wasmbindgen = { git = "http://ser.yinengyun.com:10080/tech/astc_decoder.git", branch="master" }
 
 # gui_web = { git = "https://github.com/GaiaWorld/pi_show.git", branch="wasm-bindgen" }
