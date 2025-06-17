@@ -1575,9 +1575,9 @@ dependencies = [
 
 [[package]]
 name = "pi_assets"
-version = "0.14.6"
+version = "0.14.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e4f61f59b365f00d39fb15b59ef4a7aae43faaee669c65df9a52053d4ecc3399"
+checksum = "7f54a21f2a6c66b1598a0d32a78c065b5cf69ce3991d17b0618e965af8bb1c9a"
 dependencies = [
  "backtrace",
  "flume 0.10.14",
@@ -1736,6 +1736,15 @@ dependencies = [
  "proc-macro2 1.0.95",
  "quote 1.0.40",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "pi_export_timer"
+version = "0.1.5"
+dependencies = [
+ "pi_cancel_timer",
+ "pi_slot_wheel",
+ "wasm-bindgen",
 ]
 
 [[package]]
@@ -3007,6 +3016,7 @@ dependencies = [
  "lol_alloc",
  "pi_assets",
  "pi_bon_decode",
+ "pi_export_timer",
  "pi_orca",
  "pi_path_finding",
  "pi_polygon",

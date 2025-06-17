@@ -7,6 +7,9 @@ edition = "2018"
 [lib]
 crate-type = ["cdylib"]
 
+[features]
+const_memory = []
+
 [dependencies]
 wasm-bindgen = { version = "0.2.86", features = ["serde-serialize"] }
 log = "0.4.14"
@@ -24,6 +27,9 @@ pi_web_logger = { path = "../pi_web_logger"}
 
 # a星相关模块
 pi_path_finding = "0.6"
+
+# 定时器
+pi_export_timer = {version = "0.1", registry = "yn"}
 
 # 避障算法相关
 pi_orca = "0.4"
@@ -45,11 +51,12 @@ tracing-wasm = "0.2.1"
 tracing-core = "*"
 tracing-log = "0.1.2"
 spade = "=2.2.0"
-pi_assets = "=0.14.6"
+pi_assets = "=0.14.7"
 
 
 bumpalo = "=3.13"
 backtrace = "=0.3.74"
+
 
 [profile.release]
 debug= true
@@ -65,3 +72,5 @@ dwarf-debug-info = true
 
 [patch.crates-io]
 pi_share = {path = "../pi_share"}
+[patch.yn]
+pi_export_timer = {path = "../../0_rust/pi_export/crates/timer"}

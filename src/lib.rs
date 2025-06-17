@@ -13,6 +13,7 @@
 // #[global_allocator]
 // static ALLOCATOR: LockedAllocator<FreeListAllocator> = LockedAllocator::new(FreeListAllocator::new(67108864));
 
+#[cfg(feature="const_memory")]
 #[global_allocator]
 static ALLOCATOR: talc::Talck<talc::locking::AssumeUnlockable, talc::ClaimOnOom> = unsafe {
     static mut MEMORY: [u8; 64 * 1024 * 1024] = [0; 64 * 1024 * 1024];
@@ -29,6 +30,7 @@ pub use pi_path_finding::*;
 pub use pi_orca::*;
 use log::info;
 pub use pi_bon_decode::*;
+pub use pi_export_timer::exports::*;
 
 use wasm_bindgen::prelude::*;
 use tracing_log::LogTracer;
