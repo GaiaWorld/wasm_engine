@@ -182,9 +182,9 @@ dependencies = [
 
 [[package]]
 name = "brotli-decompressor"
-version = "4.0.2"
+version = "4.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "74fa05ad7d803d413eb8380983b092cbbaf9a85f151b871360e7b00cd7060b37"
+checksum = "a334ef7c9e23abf0ce748e8cd309037da93e606ad52eb372e4ce327a0dcfbdfd"
 dependencies = [
  "alloc-no-stdlib",
  "alloc-stdlib",
@@ -1576,8 +1576,6 @@ dependencies = [
 [[package]]
 name = "pi_assets"
 version = "0.14.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f54a21f2a6c66b1598a0d32a78c065b5cf69ce3991d17b0618e965af8bb1c9a"
 dependencies = [
  "backtrace",
  "flume 0.10.14",
@@ -1602,7 +1600,7 @@ dependencies = [
  "dashmap",
  "fxhash",
  "lazy_static",
- "pi_bon 0.2.4",
+ "pi_bon",
  "pi_hash",
  "pi_share",
  "serde",
@@ -1622,21 +1620,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "pi_bon"
-version = "0.2.5"
-source = "registry+http://ser.yinengyun.com:10082/tech/crates-io.git"
-checksum = "a045a08b875de1966652dbe17743578cb2cd855b4d1d27af84dc9b1e288523c0"
-dependencies = [
- "bytes",
- "log",
- "num-bigint",
-]
-
-[[package]]
 name = "pi_bon_decode"
-version = "0.1.10"
+version = "0.1.14"
 source = "registry+http://ser.yinengyun.com:10082/tech/crates-io.git"
-checksum = "49892d21ede513f4adbc7b837b5aedf66c98c4537f4e997a90147aa3b6ee32e2"
+checksum = "c018585bc5303de9e3135eb2be44b2668c954944c551d7566d4f5d19b0b48564"
 dependencies = [
  "brotli-decompressor",
  "bytes",
@@ -1645,7 +1632,7 @@ dependencies = [
  "lazy_static",
  "log",
  "pi_assets",
- "pi_bon 0.2.5",
+ "pi_bon",
  "pi_hash",
  "pi_share",
  "pi_time 0.3.4",
@@ -1671,9 +1658,7 @@ dependencies = [
 
 [[package]]
 name = "pi_cancel_timer"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3dc5115123396e5862df6f499f60362d6e931c506818b8ecc63fa9b13637b85d"
+version = "0.2.1"
 dependencies = [
  "pi_ext_heap",
  "pi_slot_deque",
@@ -1739,11 +1724,14 @@ dependencies = [
 ]
 
 [[package]]
-name = "pi_export_timer"
-version = "0.1.5"
+name = "pi_export_task_pool"
+version = "0.1.0"
 dependencies = [
- "pi_cancel_timer",
+ "bitvec",
+ "log",
  "pi_slot_wheel",
+ "pi_weight_task",
+ "slotmap 1.0.7",
  "wasm-bindgen",
 ]
 
@@ -2022,9 +2010,9 @@ dependencies = [
 
 [[package]]
 name = "pi_timer"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8ac2a22d9b7a5f869355e309fc9353fd8aa739f70751328033ab265506aacf73"
+checksum = "e00ee451fe463c86eb49af39bfbd1d5608c90ca99acb898292590d52498bf65c"
 dependencies = [
  "pi_ext_heap",
  "pi_wheel",
@@ -2045,6 +2033,31 @@ version = "0.1.0"
 dependencies = [
  "log",
  "wasm-bindgen",
+]
+
+[[package]]
+name = "pi_weight"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d91f4cdfa45e8f351481cd53152a43e05b988b2774fcb76360a4e3bd06d5be2e"
+dependencies = [
+ "pi_ext_heap",
+]
+
+[[package]]
+name = "pi_weight_task"
+version = "0.2.2"
+dependencies = [
+ "pi_cancel_timer",
+ "pi_ext_heap",
+ "pi_slot_deque",
+ "pi_slot_wheel",
+ "pi_timer",
+ "pi_weight",
+ "pi_wheel",
+ "pi_wy_rng",
+ "rand_core 0.6.4",
+ "slotmap 1.0.7",
 ]
 
 [[package]]
@@ -2860,7 +2873,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
 dependencies = [
  "cfg-if",
- "rand 0.8.5",
+ "rand 0.7.3",
  "static_assertions",
 ]
 
@@ -3016,7 +3029,8 @@ dependencies = [
  "lol_alloc",
  "pi_assets",
  "pi_bon_decode",
- "pi_export_timer",
+ "pi_cancel_timer",
+ "pi_export_task_pool",
  "pi_orca",
  "pi_path_finding",
  "pi_polygon",
