@@ -29,7 +29,7 @@ pi_web_logger = { path = "../pi_web_logger"}
 pi_path_finding = "0.6"
 
 # 任务池
-pi_export_task_pool = {version = "0.1", registry = "yn"}
+pi_export_task_pool = { path = "../pi_show/task_pool"}
 pi_cancel_timer = "*"
 
 # 避障算法相关
@@ -41,8 +41,10 @@ pi_spatial = "0.5"
 # pi_spatial = {path = "../pi_spatial"}
 
 lol_alloc = {path = "../lol_alloc"}
-pi_bon_decode = {version = "0.1", registry = "yn"} # pi_wasm1.x， 使用pi_bon_decode@0.1.2版本, 否则使用0.1.10
+pi_bon_decode = {version = "0.1.2", registry = "yn"} # pi_wasm1.x， 使用pi_bon_decode@0.1.2版本, 否则使用0.1
 pi_polygon = "=0.1.0"
+postcard = "=1.1.1"
+cobs = "=0.2.3"
 
 
 tracing = { version = "0.1", default-features = false, features = ["std"] }
@@ -53,6 +55,7 @@ tracing-core = "*"
 tracing-log = "0.1.2"
 spade = "=2.2.0"
 pi_assets = "=0.14.7"
+pi_map = "=0.2.2"
 
 
 bumpalo = "=3.13"
@@ -75,6 +78,7 @@ dwarf-debug-info = true
 pi_share = {path = "../pi_share"}
 pi_cancel_timer = {path = "../pi_cancel_timer"}
 pi_assets = {path = "../pi_assets"}
-pi_weight_task = {path = "../../0_rust/pi_weight_task"}
+pi_key_alloter = {path = "../pi_key_alloter"} # v0.5分支
+# pi_weight_task = {path = "../../0_rust/pi_weight_task"}
 [patch.yn]
-pi_export_task_pool = {path = "../../0_rust/pi_export/crates/task_pool"}
+# pi_export_task_pool = {path = "../../0_rust/pi_export/crates/task_pool"}
