@@ -7,11 +7,13 @@ edition = "2018"
 [lib]
 crate-type = ["cdylib"]
 
-[dependencies]
-wasm-bindgen = { version = "0.2", features = ["serde-serialize"] }
-log = {version="0.4.14", features = ["release_max_level_info"]}
-getrandom = "=0.2.8" 
+[features]
+const_memory = []
 
+[dependencies]
+wasm-bindgen = { version = "0.2.86", features = ["serde-serialize"] }
+log = "0.4.14"
+talc = "=4.4.0"
 # astc_decoder_wasmbindgen = { git = "http://ser.yinengyun.com:10080/tech/astc_decoder.git", branch="master" }
 
 # gui_web = { git = "https://github.com/GaiaWorld/pi_show.git", branch="wasm-bindgen" }
@@ -26,27 +28,39 @@ pi_web_logger = { path = "../pi_web_logger"}
 # a星相关模块
 pi_path_finding = "0.6"
 
+# 任务池
+pi_export_task_pool = { path = "../pi_show/task_pool"}
+pi_cancel_timer = "*"
+
 # 避障算法相关
 pi_orca = "0.4"
 # pi_orca = {path = "../pi_orca"}
 
-pi_bon_decode = {version = "0.1", registry = "yn"}
 # 四叉树和tilemap相关
 pi_spatial = "0.5"
-wee_alloc = "0.4"
 # pi_spatial = {path = "../pi_spatial"}
-# talc = {version = "4.2", default-features = false, features = ["lock_api", "allocator"]}
-talc = "=4.4.0"
-# lol_alloc = {path = "../lol_alloc"}
-ahash = "0.8.6"
-pi_style = {version = "0.1.11", registry = "yn"}
-pi_null = "=0.1.0"
-# pi_share = "0.4"
-pi_share = {version = "0.4", features = ["no_atomic"]}
-pi_atom = {version = "0.5"}
 
-# [patch.crates-io]
-# talc = {path="../talc"}
+lol_alloc = {path = "../lol_alloc"}
+pi_bon_decode = {version = "0.1.2", registry = "yn"} # pi_wasm1.x， 使用pi_bon_decode@0.1.2版本, 否则使用0.1
+pi_polygon = "=0.1.0"
+postcard = "=1.1.1"
+cobs = "=0.2.3"
+
+
+tracing = { version = "0.1", default-features = false, features = ["std"] }
+tracing-subscriber = {version = "0.3.1", features = ["registry", "env-filter"]}
+console_error_panic_hook = "0.1.6"
+tracing-wasm = "0.2.1"
+tracing-core = "*"
+tracing-log = "0.1.2"
+spade = "=2.2.0"
+pi_assets = "=0.14.7"
+pi_map = "=0.2.2"
+
+
+bumpalo = "=3.13"
+backtrace = "=0.3.74"
+
 
 [profile.release]
 debug= true
@@ -59,13 +73,12 @@ codegen-units = 1
 dwarf-debug-info = true
 
 [profile.dev]
-dwarf-debug-info = true
 
 [patch.crates-io]
-pi_atom = {path = "D://0_rust/pi_atom"}
 pi_share = {path = "../pi_share"}
+pi_cancel_timer = {path = "../pi_cancel_timer"}
 pi_assets = {path = "../pi_assets"}
-pi_flex_layout = {path = "D://0_rust/pi_flex_layout"}
-
+pi_key_alloter = {path = "../pi_key_alloter"} # v0.5分支
+# pi_weight_task = {path = "../../0_rust/pi_weight_task"}
 [patch.yn]
-pi_style = {path = "D://0_rust/pi_style"}
+# pi_export_task_pool = {path = "../../0_rust/pi_export/crates/task_pool"}

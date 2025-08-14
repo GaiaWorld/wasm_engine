@@ -14,10 +14,11 @@ let cwd = process.cwd();
 
 var dir = process.argv[2] || "pkg";
 var name = process.argv[3] || "gui";
+var cfgPath = process.argv[4] || "temp/cfg.txt";
 var wasmName = `${name}_bg`;
 
 let outDir;
-let data = fs.readFileSync("temp/cfg.txt", {encoding:"utf8"});
+let data = fs.readFileSync(cfgPath, {encoding:"utf8"});
 let datas = data.split("=");
 if (datas.length == 2) {
 	let d = datas[1].trim();
@@ -35,6 +36,8 @@ let out_wasm_js_path = `${dir}/${name}.wasm.ts`;
 fs.readFile(in_wasm_js_path, {encoding:"utf8"}, (err, data) => {
 	if(!err) {
 		data = data.replace(`import.meta.url`, '""');
+		data = data.replace(/(from '[.a-zA-Z0-9/]*)pi_hal\-[a-z0-9]*/g, function(_match, p0) {return p0 + 'pi_hal'});
+		data = data.replace(/(from '[.a-zA-Z0-9/]*)pi_bon_decode\-[a-z0-9]*/g, function(_match, p0) {return p0 + 'pi_bon_decode'});
 		data = data.replace(/from\s+'(.+?)\.js'/g,  "from '$1'");
 		data = data.replace(/getObject\(arg0\)\sinstanceof\sWindow/g, "true");
 		data = data.replace(/getObject\(arg0\)\sinstanceof\sCanvasRenderingContext2D/g, "true");
@@ -57,19 +60,16 @@ fs.readFile(in_wasm_js_path, {encoding:"utf8"}, (err, data) => {
     };
 `
 		)
-	
-
 
 		data = data.replace(
-`    const { instance, module } = await __wbg_load(await input, imports);
+`    const { instance, module } = await __wbg_load(await module_or_path, imports);
 
     return __wbg_finalize_init(instance, module);
 }
 
-export { initSync }
-export default __wbg_init;`
-
-,`    const r = await __wbg_load(await input, imports);
+export { initSync };
+export default __wbg_init;`,
+`    const r = await __wbg_load(await module_or_path, imports);
 
     let ret = __wbg_finalize_init(r.instance, r.module);
 	
@@ -80,15 +80,9 @@ export default __wbg_init;`
     return ret;
 }
 
-export { initSync }
-// 前后端适配
-if(!globalThis._$cwd){
-	Promise.resolve().then(() => {
-		__wbg_init(module.wasmModule).then((r) => {
-			window["_$wasm"] = r;
-		});
-	})
-}`);
+Promise.resolve().then(() => {
+	window["__wasm"] = __wbg_init(module.wasmModule);
+})`);
 		// data = data.replace(`Module["noExitRuntime"]=true;run();`, `Module["noExitRuntime"] = true;
 		// //PI_START
 		// run();
@@ -97,12 +91,14 @@ if(!globalThis._$cwd){
 		// //PI_END
 		// `);
 
+		data = data.replace("function getObject(idx) { return heap[idx]; }", "function getObject(idx) { let result = heap[idx]; if (result === undefined) { return null } else { return result }; }");
+
 		fs.writeFile(out_wasm_js_path, data, {encoding:"utf8"}, (err) => {
 			if(err) {
 				console.log("写文件失败！！", JSON.stringify(err));
 			}
 		});
-		
+
 		if (outDir) {
 			fs.writeFile(`${outDir}/${name}.wasm.ts`, data, (err) => {
 				if(err) {
@@ -114,7 +110,6 @@ if(!globalThis._$cwd){
 		console.log("读文件失败！！", JSON.stringify(err));
 	}
 });
-
 
 fs.readFile(in_wasm_path, (err, data) => {
 	if(!err) {
