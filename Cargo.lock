@@ -827,7 +827,7 @@ dependencies = [
  "pi_polygon",
  "pi_print_any",
  "pi_share",
- "pi_slotmap",
+ "pi_slotmap 0.1.16",
  "pi_spatial",
  "pi_style",
  "pointer",
@@ -876,7 +876,7 @@ dependencies = [
  "pi_flex_layout",
  "pi_hash",
  "pi_share",
- "pi_slotmap",
+ "pi_slotmap 0.1.16",
  "pi_spatial",
  "pi_style",
  "postcard",
@@ -1549,7 +1549,7 @@ dependencies = [
  "log",
  "num_cpus",
  "parking_lot",
- "pi_cancel_timer",
+ "pi_cancel_timer 0.2.1",
  "pi_hash",
  "pi_timer",
  "pi_wrr",
@@ -1569,7 +1569,7 @@ dependencies = [
  "pi_curves",
  "pi_hash",
  "pi_null",
- "pi_slotmap",
+ "pi_slotmap 0.1.16",
  "serde",
 ]
 
@@ -1652,18 +1652,31 @@ dependencies = [
  "log",
  "pi_hash",
  "pi_print_any",
- "pi_slot_deque",
+ "pi_slot_deque 0.2.1",
  "slotmap 1.0.7",
 ]
 
 [[package]]
 name = "pi_cancel_timer"
 version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "68cfa6915a1806a897418471f303c21768f9dd8d5ecb399450834d2729043526"
 dependencies = [
  "pi_ext_heap",
- "pi_slot_deque",
- "pi_slot_wheel",
+ "pi_slot_deque 0.2.1",
+ "pi_slot_wheel 0.2.0",
  "slotmap 1.0.7",
+]
+
+[[package]]
+name = "pi_cancel_timer"
+version = "0.3.3"
+dependencies = [
+ "pi_ext_heap",
+ "pi_null",
+ "pi_slot_deque 0.3.1",
+ "pi_slot_wheel 0.3.1",
+ "pi_slotmap 0.2.1",
 ]
 
 [[package]]
@@ -1729,7 +1742,7 @@ version = "0.1.0"
 dependencies = [
  "bitvec",
  "log",
- "pi_slot_wheel",
+ "pi_slot_wheel 0.3.1",
  "pi_weight_task",
  "slotmap 1.0.7",
  "wasm-bindgen",
@@ -1755,7 +1768,7 @@ dependencies = [
  "pi_map",
  "pi_null",
  "pi_print_any",
- "pi_slotmap",
+ "pi_slotmap 0.1.16",
  "pi_slotmap_tree",
  "serde",
  "smallvec",
@@ -1799,6 +1812,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "pi_key_alloter"
+version = "0.6.4"
+dependencies = [
+ "crossbeam",
+ "pi_null",
+ "pi_share",
+]
+
+[[package]]
 name = "pi_link_list"
 version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1835,7 +1857,7 @@ checksum = "18055f46484d7e0e5c79c3dec14da563cb7e2f8de759e231debe96acf107b4b8"
 dependencies = [
  "getrandom 0.2.16",
  "parry2d",
- "pi_slotmap",
+ "pi_slotmap 0.1.16",
  "pi_spatial",
  "pi_wy_rng",
  "rand 0.8.5",
@@ -1898,13 +1920,33 @@ dependencies = [
 ]
 
 [[package]]
+name = "pi_slot_deque"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1bac22f8f7dd48734e67f7d843486751400f298c9cd0513f519a0b56d2efdd81"
+dependencies = [
+ "pi_slotmap 0.2.1",
+]
+
+[[package]]
 name = "pi_slot_wheel"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "088a476561a42ffa18814bb5c9d9aa85ac32717699b246b6aa55f7b495579d98"
 dependencies = [
- "pi_slot_deque",
+ "pi_slot_deque 0.2.1",
  "slotmap 1.0.7",
+]
+
+[[package]]
+name = "pi_slot_wheel"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "86555d08b8d969ed27d346214a21aaa4dbcf7dea6f2cc848e5df76b0544a5dc1"
+dependencies = [
+ "pi_null",
+ "pi_slot_deque 0.3.1",
+ "pi_slotmap 0.2.1",
 ]
 
 [[package]]
@@ -1913,7 +1955,19 @@ version = "0.1.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2d09f32862815f3994657d3486c017239e44f147318e5db0fa05f0b9b7dcb026"
 dependencies = [
- "pi_key_alloter",
+ "pi_key_alloter 0.4.10",
+ "pi_null",
+ "serde",
+ "version_check",
+]
+
+[[package]]
+name = "pi_slotmap"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5ab05d4f3957915f5d9d553f62d0e3a3f412ee2f79bbfcb86e4a8f405b860989"
+dependencies = [
+ "pi_key_alloter 0.6.4",
  "pi_null",
  "serde",
  "version_check",
@@ -1928,7 +1982,7 @@ dependencies = [
  "log",
  "pi_null",
  "pi_print_any",
- "pi_slotmap",
+ "pi_slotmap 0.1.16",
  "serde",
 ]
 
@@ -1944,7 +1998,7 @@ dependencies = [
  "parry3d",
  "pi_link_list",
  "pi_null",
- "pi_slotmap",
+ "pi_slotmap 0.1.16",
  "wasm-bindgen",
 ]
 
@@ -1972,7 +2026,7 @@ dependencies = [
  "pi_hash",
  "pi_print_any",
  "pi_share",
- "pi_slotmap",
+ "pi_slotmap 0.1.16",
  "serde",
  "smallvec",
  "thiserror",
@@ -2046,12 +2100,14 @@ dependencies = [
 
 [[package]]
 name = "pi_weight_task"
-version = "0.2.2"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a5b2a6d28287aed47b43a96b051378b00fb16325259e5c717f32c75234962e4d"
 dependencies = [
- "pi_cancel_timer",
+ "pi_cancel_timer 0.3.3",
  "pi_ext_heap",
- "pi_slot_deque",
- "pi_slot_wheel",
+ "pi_slot_deque 0.3.1",
+ "pi_slot_wheel 0.3.1",
  "pi_timer",
  "pi_weight",
  "pi_wheel",
@@ -3023,19 +3079,21 @@ version = "0.1.0"
 dependencies = [
  "backtrace",
  "bumpalo",
+ "cobs",
  "console_error_panic_hook",
  "gui_web",
  "log",
  "lol_alloc",
  "pi_assets",
  "pi_bon_decode",
- "pi_cancel_timer",
  "pi_export_task_pool",
+ "pi_map",
  "pi_orca",
  "pi_path_finding",
  "pi_polygon",
  "pi_spatial",
  "pi_web_logger",
+ "postcard",
  "res_mgr_web",
  "spade",
  "talc",

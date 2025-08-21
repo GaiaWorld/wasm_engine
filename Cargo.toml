@@ -30,7 +30,6 @@ pi_path_finding = "0.6"
 
 # 任务池
 pi_export_task_pool = { path = "../pi_show/task_pool"}
-pi_cancel_timer = "*"
 
 # 避障算法相关
 pi_orca = "0.4"
