@@ -40,8 +40,7 @@ pi_orca = "0.4"
 pi_spatial = "0.5"
 # pi_spatial = {path = "../pi_spatial"}
 
-lol_alloc = {path = "../lol_alloc"}
-pi_bon_decode = {version = "0.1.2", registry = "yn"} # pi_wasm1.x， 使用pi_bon_decode@0.1.2版本, 否则使用0.1
+pi_bon_decode = {version = "=0.1.2", registry = "yn"} # pi_wasm1.x， 使用pi_bon_decode@0.1.2版本, 否则使用0.1
 pi_polygon = "=0.1.0"
 postcard = "=1.1.1"
 cobs = "=0.2.3"
@@ -75,10 +74,9 @@ dwarf-debug-info = true
 [profile.dev]
 
 [patch.crates-io]
-pi_share = {path = "../pi_share"}
-pi_cancel_timer = {path = "../pi_cancel_timer"}
-pi_assets = {path = "../pi_assets"}
-pi_key_alloter = {path = "../pi_key_alloter"} # v0.5分支
+pi_share = {git = "https://github.com/GaiaWorld/pi_share.git", branch="new_inteface"}
+pi_assets = {git = "https://github.com/GaiaWorld/pi_assets.git", branch="v0.14"}
+pi_key_alloter = {git = "https://github.com/GaiaWorld/pi_key_alloter.git", branch="v0.5"}
 # pi_weight_task = {path = "../../0_rust/pi_weight_task"}
 [patch.yn]
 # pi_export_task_pool = {path = "../../0_rust/pi_export/crates/task_pool"}
