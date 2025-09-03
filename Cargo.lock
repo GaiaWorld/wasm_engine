@@ -57,6 +57,7 @@ dependencies = [
 [[package]]
 name = "any"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 
 [[package]]
 name = "approx"
@@ -149,6 +150,7 @@ dependencies = [
 [[package]]
 name = "bincode"
 version = "1.1.4"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "autocfg 0.1.8",
  "byteorder",
@@ -258,6 +260,7 @@ checksum = "67ba02a97a2bd10f4b59b25c7973101c79642302776489e030cd13cdab09ed15"
 [[package]]
 name = "color"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_math.git?branch=master#858dbe52dcd3f49e7ad14770528474a3c15e129a"
 dependencies = [
  "ncollide2d",
  "num-traits",
@@ -293,6 +296,7 @@ checksum = "790eea4361631c5e7d22598ecd5723ff611904e3344ce8720784c93e3d83d40b"
 [[package]]
 name = "cross_performance"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "lazy_static",
  "web-sys",
@@ -407,14 +411,17 @@ dependencies = [
 [[package]]
 name = "data_view"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 
 [[package]]
 name = "debug_info"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 
 [[package]]
 name = "densevec"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "map",
 ]
@@ -422,6 +429,7 @@ dependencies = [
 [[package]]
 name = "deque"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "slab 0.1.0",
  "time",
@@ -452,6 +460,7 @@ dependencies = [
 [[package]]
 name = "dirty"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "log",
  "map",
@@ -481,6 +490,7 @@ dependencies = [
 [[package]]
 name = "dyn_uint"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "slab 0.1.0",
 ]
@@ -488,6 +498,7 @@ dependencies = [
 [[package]]
 name = "ecs"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "any",
  "debug_info",
@@ -509,6 +520,7 @@ dependencies = [
 [[package]]
 name = "ecs_derive"
 version = "0.4.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "ecs",
  "hashmap",
@@ -539,6 +551,7 @@ checksum = "edd0f118536f44f5ccd48bcb8b111bdc3de888b58c74639dfb034a357d0f206d"
 [[package]]
 name = "enum_default_macro"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "proc-macro2 1.0.95",
  "quote 1.0.40",
@@ -563,6 +576,7 @@ checksum = "37ab347416e802de484e4d03c7316c48f1ecb56574dfd4a46a80f173ce1de04d"
 [[package]]
 name = "flex_layout"
 version = "0.2.2"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "dirty",
  "ecs",
@@ -942,6 +956,7 @@ dependencies = [
 [[package]]
 name = "hash"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "fxhash",
  "twox-hash",
@@ -971,6 +986,7 @@ checksum = "290f1a1d9242c78d09ce40a5e87e7554ee637af1351968159f4952f028f75604"
 [[package]]
 name = "hashmap"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "fnv",
  "map",
@@ -979,6 +995,7 @@ dependencies = [
 [[package]]
 name = "heap"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "dyn_uint",
  "time",
@@ -1007,6 +1024,7 @@ checksum = "d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024"
 [[package]]
 name = "idtree"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "log",
  "map",
@@ -1076,6 +1094,7 @@ checksum = "8355be11b20d696c8f18f6cc018c4e372165b1fa8126cef092399c9951984ffa"
 [[package]]
 name = "listener"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "im",
  "share",
@@ -1113,6 +1132,7 @@ dependencies = [
 [[package]]
 name = "map"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "hash",
  "time",
@@ -2171,6 +2191,7 @@ checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 [[package]]
 name = "pointer"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "lazy_static",
  "slab 0.1.0",
@@ -2608,6 +2629,7 @@ dependencies = [
 [[package]]
 name = "share"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 
 [[package]]
 name = "shlex"
@@ -2658,6 +2680,7 @@ dependencies = [
 [[package]]
 name = "slab"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "time",
 ]
@@ -2834,6 +2857,7 @@ dependencies = [
 [[package]]
 name = "time"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "lazy_static",
 ]
@@ -2941,6 +2965,7 @@ checksum = "1dccffe3ce07af9386bfd29e80c0ab1a8205a2fc34e4bcd40364df902cfa8f3f"
 [[package]]
 name = "ucd"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 
 [[package]]
 name = "unicode-ident"
@@ -2957,6 +2982,7 @@ checksum = "fc72304796d0818e357ead4e000d19c9c174ab23dc11093ac919054d20a6a7fc"
 [[package]]
 name = "util"
 version = "0.1.0"
+source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "libc",
 ]
