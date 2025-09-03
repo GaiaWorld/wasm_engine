@@ -1098,13 +1098,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "13dc2df351e3202783a1fe0d44375f7295ffb4049267b0f3018346dc122a1d94"
 
 [[package]]
-name = "lol_alloc"
-version = "0.4.0"
-dependencies = [
- "spin",
-]
-
-[[package]]
 name = "loom"
 version = "0.5.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1576,6 +1569,7 @@ dependencies = [
 [[package]]
 name = "pi_assets"
 version = "0.14.7"
+source = "git+https://github.com/GaiaWorld/pi_assets.git?branch=v0.14#e4353811eae26eb578bf7635af5807d62a32bf20"
 dependencies = [
  "backtrace",
  "flume 0.10.14",
@@ -1671,6 +1665,8 @@ dependencies = [
 [[package]]
 name = "pi_cancel_timer"
 version = "0.3.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7fb0b07459a5613afe4ae244047cdb95214e400fa5b8b53824784e726d663bdc"
 dependencies = [
  "pi_ext_heap",
  "pi_null",
@@ -1814,6 +1810,7 @@ dependencies = [
 [[package]]
 name = "pi_key_alloter"
 version = "0.6.4"
+source = "git+https://github.com/GaiaWorld/pi_key_alloter.git?branch=v0.5#8fe37dac499f47f6457acf6476ec882b3f0722d7"
 dependencies = [
  "crossbeam",
  "pi_null",
@@ -1900,6 +1897,7 @@ checksum = "8eeeddb49aca084a517b5efcd8111cd19121130201190c09d5d817e998f78a4a"
 [[package]]
 name = "pi_share"
 version = "0.4.15"
+source = "git+https://github.com/GaiaWorld/pi_share.git?branch=new_inteface#d8b24606b1b192c3b09083ac59352b86a888d6d4"
 dependencies = [
  "log",
 ]
@@ -2084,6 +2082,7 @@ dependencies = [
 [[package]]
 name = "pi_web_logger"
 version = "0.1.0"
+source = "git+http://ser.yinengyun.com:10082/tech/pi_web_logger.git?branch=master#047a4f0e33a4f259149a78e1cb99011589a360f3"
 dependencies = [
  "log",
  "wasm-bindgen",
@@ -2929,7 +2928,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
 dependencies = [
  "cfg-if",
- "rand 0.7.3",
+ "rand 0.8.5",
  "static_assertions",
 ]
 
@@ -3081,9 +3080,9 @@ dependencies = [
  "bumpalo",
  "cobs",
  "console_error_panic_hook",
+ "getset",
  "gui_web",
  "log",
- "lol_alloc",
  "pi_assets",
  "pi_bon_decode",
  "pi_export_task_pool",
