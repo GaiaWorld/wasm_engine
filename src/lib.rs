@@ -30,7 +30,6 @@ pub use pi_path_finding::*;
 pub use pi_orca::*;
 use log::info;
 pub use pi_bon_decode::*;
-pub use pi_export_task_pool::exports::*;
 
 use wasm_bindgen::prelude::*;
 use tracing_log::LogTracer;

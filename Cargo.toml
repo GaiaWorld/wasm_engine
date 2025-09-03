@@ -22,14 +22,11 @@ gui_web = { path = "../pi_show/gui_web" }
 # res_mgr_web = { git = "https://github.com/GaiaWorld/pi_show.git", branch="wasm-bindgen" }
 res_mgr_web = { path = "../pi_show/res_mgr_web"}
 
-# pi_web_logger = { git = "http://ser.yinengyun.com:10082/tech/pi_web_logger.git", branch="master" }
-pi_web_logger = { path = "../pi_web_logger"}
+pi_web_logger = { git = "http://ser.yinengyun.com:10082/tech/pi_web_logger.git", branch="master" }
 
 # a星相关模块
 pi_path_finding = "0.6"
 
-# 任务池
-pi_export_task_pool = { path = "../pi_show/task_pool"}
 pi_cancel_timer = "*"
 
 # 避障算法相关
@@ -77,6 +74,3 @@ dwarf-debug-info = true
 pi_share = {git = "https://github.com/GaiaWorld/pi_share.git", branch="new_inteface"}
 pi_assets = {git = "https://github.com/GaiaWorld/pi_assets.git", branch="v0.14"}
 pi_key_alloter = {git = "https://github.com/GaiaWorld/pi_key_alloter.git", branch="v0.5"}
-# pi_weight_task = {path = "../../0_rust/pi_weight_task"}
-[patch.yn]
-# pi_export_task_pool = {path = "../../0_rust/pi_export/crates/task_pool"}
