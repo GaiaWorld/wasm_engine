@@ -13,7 +13,7 @@
 // #[global_allocator]
 // static ALLOCATOR: LockedAllocator<FreeListAllocator> = LockedAllocator::new(FreeListAllocator::new(67108864));
 
-#[cfg(feature="const_memory")]
+#[cfg(feature = "const_memory")]
 #[global_allocator]
 static ALLOCATOR: talc::Talck<talc::locking::AssumeUnlockable, talc::ClaimOnOom> = unsafe {
     static mut MEMORY: [u8; 64 * 1024 * 1024] = [0; 64 * 1024 * 1024];
@@ -24,18 +24,19 @@ static ALLOCATOR: talc::Talck<talc::locking::AssumeUnlockable, talc::ClaimOnOom>
 use std::cell::OnceCell;
 
 pub use gui_web::*;
-pub use res_mgr_web::*;
-pub use pi_spatial::*;
-pub use pi_path_finding::*;
-pub use pi_orca::*;
 use log::info;
 pub use pi_bon_decode::*;
+pub use pi_export_cache::*;
 pub use pi_export_task_pool::exports::*;
+pub use pi_orca::*;
+pub use pi_path_finding::*;
+pub use pi_spatial::*;
+pub use res_mgr_web::*;
 
-use wasm_bindgen::prelude::*;
-use tracing_log::LogTracer;
-use tracing_subscriber::{prelude::*, registry::Registry, EnvFilter, reload::Handle};
 use tracing_core::event::Event;
+use tracing_log::LogTracer;
+use tracing_subscriber::{prelude::*, registry::Registry, reload::Handle, EnvFilter};
+use wasm_bindgen::prelude::*;
 
 pub struct LogHandle(OnceCell<Handle<EnvFilter, Registry>>);
 unsafe impl Sync for LogHandle {}
@@ -47,39 +48,39 @@ pub static LOG_HANDLE: LogHandle = LogHandle(OnceCell::new());
 pub fn init_logger(level: pi_web_logger::Level, filter: Option<String>) {
     pi_web_logger::init_with_level(level);
     log::info!("init logger ok");
-//     let default_filter = match filter {
-//         Some(f) => f,
-//         None => "warn".to_string(),
-//     };
+    //     let default_filter = match filter {
+    //         Some(f) => f,
+    //         None => "warn".to_string(),
+    //     };
 
-//     let filter_layer = EnvFilter::try_from_default_env()
-//         .or_else(|_| EnvFilter::try_new(&default_filter))
-//         .unwrap();
-//     let (filter_layer, reload_handle) = tracing_subscriber::reload::Layer::new(filter_layer);
-//     let subscriber = Registry::default().with(filter_layer);
-//     // app.world.insert_single_res(LogFilterHandle(reload_handle));
-//     unsafe {LOG_HANDLE.0.get_or_init(move|| {
-//         reload_handle
-//     })};
+    //     let filter_layer = EnvFilter::try_from_default_env()
+    //         .or_else(|_| EnvFilter::try_new(&default_filter))
+    //         .unwrap();
+    //     let (filter_layer, reload_handle) = tracing_subscriber::reload::Layer::new(filter_layer);
+    //     let subscriber = Registry::default().with(filter_layer);
+    //     // app.world.insert_single_res(LogFilterHandle(reload_handle));
+    //     unsafe {LOG_HANDLE.0.get_or_init(move|| {
+    //         reload_handle
+    //     })};
 
-//     console_error_panic_hook::set_once();
-//     let mut c_b =  tracing_wasm::WASMLayerConfigBuilder::default();
-//     let finished_subscriber = subscriber.with(tracing_wasm::WASMLayer::new(
-//         c_b.set_report_logs_in_timings(false).build(),
-//     ));
+    //     console_error_panic_hook::set_once();
+    //     let mut c_b =  tracing_wasm::WASMLayerConfigBuilder::default();
+    //     let finished_subscriber = subscriber.with(tracing_wasm::WASMLayer::new(
+    //         c_b.set_report_logs_in_timings(false).build(),
+    //     ));
 
-//     let logger_already_set = LogTracer::init().is_err();
-//     let subscriber_already_set =
-//             tracing::subscriber::set_global_default(finished_subscriber).is_err();
+    //     let logger_already_set = LogTracer::init().is_err();
+    //     let subscriber_already_set =
+    //             tracing::subscriber::set_global_default(finished_subscriber).is_err();
 
-//     match (logger_already_set, subscriber_already_set) {
-//         (true, true) => tracing::warn!(
-//             "Could not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin."
-//         ),
-//         (true, _) => tracing::warn!("Could not set global logger as it is already set. Consider disabling LogPlugin."),
-//         (_, true) => tracing::warn!("Could not set global tracing subscriber as it is already set. Consider disabling LogPlugin."),
-//         _ => (),
-//     };
+    //     match (logger_already_set, subscriber_already_set) {
+    //         (true, true) => tracing::warn!(
+    //             "Could not set global logger and tracing subscriber as they are already set. Consider disabling LogPlugin."
+    //         ),
+    //         (true, _) => tracing::warn!("Could not set global logger as it is already set. Consider disabling LogPlugin."),
+    //         (_, true) => tracing::warn!("Could not set global tracing subscriber as it is already set. Consider disabling LogPlugin."),
+    //         _ => (),
+    //     };
 }
 
 // #[allow(unused_attributes)]
@@ -89,6 +90,6 @@ pub fn init_logger(level: pi_web_logger::Level, filter: Option<String>) {
 //     if let Ok(filter_layer) = tracing_subscriber::EnvFilter::try_new(filter) {
 //         let _ = handle.modify(|filter| *filter = filter_layer);
 //     } else {
-        
+
 //     }
 // }

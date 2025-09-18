@@ -150,6 +150,15 @@ dependencies = [
 [[package]]
 name = "bincode"
 version = "1.1.4"
+dependencies = [
+ "autocfg 0.1.8",
+ "byteorder",
+ "serde",
+]
+
+[[package]]
+name = "bincode"
+version = "1.1.4"
 source = "git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface#608c914a9bfdbb13f56da0c38b7b1b2a31bec832"
 dependencies = [
  "autocfg 0.1.8",
@@ -798,7 +807,7 @@ name = "gui"
 version = "0.1.0"
 dependencies = [
  "ahash",
- "bincode",
+ "bincode 1.1.4 (git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface)",
  "bitflags 1.3.2",
  "bitvec",
  "color",
@@ -861,7 +870,7 @@ dependencies = [
 name = "gui_web"
 version = "0.1.0"
 dependencies = [
- "bincode",
+ "bincode 1.1.4 (git+https://github.com/GaiaWorld/pi_lib.git?branch=new_gui_interface)",
  "console_error_panic_hook",
  "cross_performance",
  "cssparser",
@@ -1177,6 +1186,26 @@ name = "memchr"
 version = "2.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "78ca9ab1a0babb1e7d5695e3530886289c18cf2f87ec19a575a0abdce112e3a3"
+
+[[package]]
+name = "minicbor"
+version = "0.21.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3e127f215f03feb25fa8c496f6f6e5720d33730e6eea7a4b0ffcdd3141c13e86"
+dependencies = [
+ "minicbor-derive",
+]
+
+[[package]]
+name = "minicbor-derive"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1154809406efdb7982841adb6311b3d095b46f78342dd646736122fe6b19e267"
+dependencies = [
+ "proc-macro2 1.0.95",
+ "quote 1.0.40",
+ "syn 1.0.109",
+]
 
 [[package]]
 name = "miniz_oxide"
@@ -1659,15 +1688,16 @@ dependencies = [
 
 [[package]]
 name = "pi_cache"
-version = "0.4.3"
+version = "0.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "74ba729e67a4e962e1276fe1e41b5dac4ad2b3b950e051efb791ac3f838ef0e2"
+checksum = "d545134240fccdb486189a18efdb51723f032d7e21a5ab45613bc8cee3560d2d"
 dependencies = [
  "log",
  "pi_hash",
+ "pi_null",
  "pi_print_any",
- "pi_slot_deque 0.2.1",
- "slotmap 1.0.7",
+ "pi_slot_deque 0.3.1",
+ "pi_slotmap 0.2.1",
 ]
 
 [[package]]
@@ -1753,6 +1783,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "pi_export_cache"
+version = "0.1.0"
+dependencies = [
+ "bincode 1.1.4",
+ "log",
+ "minicbor",
+ "pi_cache",
+ "serde",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "pi_export_task_pool"
 version = "0.1.0"
 dependencies = [
@@ -1835,6 +1877,7 @@ dependencies = [
  "crossbeam",
  "pi_null",
  "pi_share",
+ "serde",
 ]
 
 [[package]]
@@ -2952,7 +2995,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
 dependencies = [
  "cfg-if",
- "rand 0.8.5",
+ "rand 0.7.3",
  "static_assertions",
 ]
 
@@ -3111,6 +3154,7 @@ dependencies = [
  "log",
  "pi_assets",
  "pi_bon_decode",
+ "pi_export_cache",
  "pi_export_task_pool",
  "pi_map",
  "pi_orca",
