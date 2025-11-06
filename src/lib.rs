@@ -93,3 +93,13 @@ pub fn init_logger(level: pi_web_logger::Level, filter: Option<String>) {
 
 //     }
 // }
+
+#[cfg(feature = "const_memory")]
+#[allow(unused_attributes)]
+#[wasm_bindgen]
+pub fn get_counters() -> String {
+    #[cfg(not(debug_assertions))]
+    return format!("{:?}", ALLOCATOR.lock().get_counters());
+    #[cfg(debug_assertions)]
+    "debug is not talc!!!".to_string()
+}
