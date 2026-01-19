@@ -6,6 +6,18 @@
 // extern crate wee_alloc;
 
 // Use `wee_alloc` as the global allocator.
+// use std::alloc::System;
+// use wasm_tracing_allocator::WasmTracingAllocator;
+
+// #[global_allocator]
+// static GLOBAL_ALLOCATOR: WasmTracingAllocator<System> = WasmTracingAllocator(System);
+
+// use pi_memory::native::{TrackingAllocator, record_snapshot, current_memory_usage};
+
+// 设置全局分配器
+// #[global_allocator]
+// static GLOBAL: TrackingAllocator = TrackingAllocator;
+
 // #[global_allocator]
 // static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
@@ -16,7 +28,7 @@
 #[cfg(feature = "const_memory")]
 #[global_allocator]
 static ALLOCATOR: talc::Talck<talc::locking::AssumeUnlockable, talc::ClaimOnOom> = unsafe {
-    static mut MEMORY: [u8; 64 * 1024 * 1024] = [0; 64 * 1024 * 1024];
+    static mut MEMORY: [u8; 96 * 1024 * 1024] = [0; 96 * 1024 * 1024];
     let span = talc::Span::from_const_array(std::ptr::addr_of!(MEMORY));
     talc::Talc::new(talc::ClaimOnOom::new(span)).lock()
 };
