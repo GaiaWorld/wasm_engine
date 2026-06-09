@@ -87,5 +87,5 @@ pi_key_alloter = { git = "https://github.com/GaiaWorld/pi_key_alloter.git", bran
 # gui_web = { path = "../pi_show/gui_web" }
 # pi_export_task_pool = { path = "../pi_show/task_pool"}
 [patch.yn]
-pi_bon_decode ={ path = "../pi_bon_decode"}
+# pi_bon_decode ={ path = "../pi_bon_decode"}
 # pi_export_task_pool = {path = "../../0_rust/pi_export/crates/task_pool"}
