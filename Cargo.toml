@@ -42,7 +42,7 @@ pi_orca = "0.4"
 pi_spatial = "0.5"
 # pi_spatial = {path = "../pi_spatial"}
 
-pi_bon_decode = { version = "0.1", registry = "yn" } # pi_wasm1.x， 使用pi_bon_decode@0.1.2版本, 否则使用0.1
+pi_bon_decode = { version = "0.1", registry = "yn" } 
 pi_polygon = "=0.1.0"
 postcard = "=1.1.1"
 cobs = "=0.2.3"

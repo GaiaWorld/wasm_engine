@@ -1655,9 +1655,9 @@ dependencies = [
 
 [[package]]
 name = "pi_bon_decode"
-version = "0.1.17"
+version = "0.1.20"
 source = "registry+http://ser.yinengyun.com:10082/tech/crates-io.git"
-checksum = "0c271c24fd7b9d93b57889edb7735bd07ef5fcae756d06853bcadd8d4a642c27"
+checksum = "56d14c8d7ff80ee8859f2af74cd90ba0c91d23ac0a0b6cdc3ec738d50f124a30"
 dependencies = [
  "brotli-decompressor",
  "bytes",
